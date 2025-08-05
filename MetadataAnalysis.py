@@ -67,11 +67,11 @@ def calculate_average_chapters(jsonl_filepath, required_tags=None, optional_tags
                             continue # Skip if only completed works are required and not met
 
                     # Apply minimum likes filter
-                    # Check if 'total_likes' key exists and is a number before accessing it
-                    if 'total_likes' in record and isinstance(record['total_likes'], (int, float)):
-                        if record['total_likes'] < min_likes:
+                    # Check if 'like_count' key exists and is a number before accessing it
+                    if 'like_count' in record and isinstance(record['like_count'], (int, float)):
+                        if record['like_count'] < min_likes:
                             continue
-                    elif min_likes > 0: # If min_likes is set but 'total_likes' is missing, skip
+                    elif min_likes > 0: # If min_likes is set but 'like_count' is missing, skip
                         continue
 
                     # Apply minimum chapters filter
